@@ -1,32 +1,29 @@
 import { useState } from "react";
-import { useEffect } from "react";
 
-export const AddPlayer = () => {
-    const [players, setPlayers] = useState([]);    
+export const AddPlayer = ({ addNewPlayer }) => {
+  const [name, setName] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addNewPlayer(name);
+    setName("");
+  };
 
-    const stringOfPlayers = JSON.stringify({players});
-    useEffect(() => {
-        localStorage.setItem("players", stringOfPlayers)
-    }, [stringOfPlayers]);
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.target)
-        setPlayers([...players, data.get("nameInput")])
-    };
-
-    return (
-        <div className="addPlayers">
-            <header className="addPlayers-header">
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        Player Name: <input name="nameInput" defaultValue="Your name here" />
-                    </label>                    
-                    <hr />
-                        <button type="reset">Reset form</button>
-                        <button type="submit">Save name</button>
-                </form>
-            </header>
-        </div>
-    )
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Player Name:{" "}
+        <input
+          name="nameInput"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+          placeholder="Your name here"
+        />
+      </label>
+      <hr />
+      <button type="reset">Reset form</button>
+      <button disabled={name.length < 3} type="submit">
+        Save name
+      </button>
+    </form>
+  );
+};
