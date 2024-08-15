@@ -1,4 +1,4 @@
-export function GameScreen({ endGame }) {
+export default function GamePage({ endGame }) {
   return (
     <div>
       <h1>GAME</h1>

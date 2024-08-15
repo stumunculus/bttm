@@ -37,3 +37,6 @@ export const APP_MODES = {
   playerNameInput: "PLAYER_NAME_INPUT",
   game: "GAME_MODE",
 };
+
+export const MIN_PLAYERS = 3;
+export const MAX_PLAYERS = 8;
