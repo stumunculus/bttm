@@ -4,14 +4,15 @@ import { STRATEGY_CARDS } from "../constants";
 import StrategyPhasePage from "./StrategyPhasePage";
 import renderStrategy from "../components/renderStrategy";
 
-export default function GamePage({ endGame }) {
+export default function GamePage({ players, endGame }) {
   const [phase, setPhase] = useState(gamePhases.strategy);
-  const [allStrats, setAllStrats] = useState(STRATEGY_CARDS);
+  const [gameState, setGameState] = useState(STRATEGY_CARDS);
 
   return (
     <div className="Game">
       <StrategyPhasePage
-        strategies={STRATEGY_CARDS}
+        players={players}
+        gameState={gameState}
         renderStrategy={renderStrategy}
       />
 

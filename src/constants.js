@@ -1,45 +1,45 @@
-export const STRATEGY_CARDS = {
-  Leadership: {
+export const STRATEGY_CARDS = [
+  {
     number: 1,
     name: "Leadership",
     color: "red",
   },
-  Diplomacy: {
+  {
     number: 2,
     name: "Diplomacy",
     color: "orange",
   },
-  Politics: {
+  {
     number: 3,
     name: "Politics",
     color: "yellow",
   },
-  Construction: {
+  {
     number: 4,
     name: "Construction",
     color: "green",
   },
-  Trade: {
+  {
     number: 5,
     name: "Trade",
     color: "aqua",
   },
-  Warefare: {
+  {
     number: 6,
     name: "Warfare",
     color: "blue",
   },
-  Technology: {
+  {
     number: 7,
     name: "Technology",
     color: "navy",
   },
-  Imperial: {
+  {
     number: 8,
     name: "Imperial",
     color: "purple",
   },
-};
+];
 
 export const APP_MODES = {
   playerNameInput: "PLAYER_NAME_INPUT",

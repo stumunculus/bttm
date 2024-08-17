@@ -50,7 +50,7 @@ function App() {
           startGame={startGame}
         />
       ) : (
-        <GamePage endGame={goToNameScreen} />
+        <GamePage players={players} endGame={goToNameScreen} />
       )}
       <button onClick={HARD_OUT}>HARD OUT</button>
     </div>

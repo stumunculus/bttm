@@ -1,6 +1,6 @@
-export default function renderStrategy({ onClick, strat }) {
+export default function renderStrategy(strat) {
   return (
-    <li onClick={onClick}>
+    <li>
       <div className="strat-container">
         <p>{strat.name}</p>
         <p>{strat.number}</p>
