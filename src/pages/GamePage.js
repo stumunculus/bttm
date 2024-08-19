@@ -2,7 +2,6 @@ import { useState } from "react";
 import { gamePhases } from "../constants";
 import { STRATEGY_CARDS } from "../constants";
 import StrategyPhasePage from "./StrategyPhasePage";
-import renderStrategy from "../components/renderStrategy";
 
 export default function GamePage({ players, endGame }) {
   const [phase, setPhase] = useState(gamePhases.strategy);
@@ -13,7 +12,7 @@ export default function GamePage({ players, endGame }) {
       <StrategyPhasePage
         players={players}
         gameState={gameState}
-        renderStrategy={renderStrategy}
+        setGameState={setGameState}
       />
 
       <button onClick={endGame}>END GAME</button>

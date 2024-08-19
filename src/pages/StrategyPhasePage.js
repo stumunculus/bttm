@@ -1,16 +1,26 @@
 import { useState } from "react";
-import { AdvancePlayer } from "../components/AdvancePlayer";
+import { RenderStrategy } from "../components/renderStrategy";
 
 export default function StrategyPhasePage({
   players,
   gameState,
-  renderStrategy,
+  setGameState,
 }) {
   const [currentPlayer, setCurrentPlayer] = useState(0);
   const nextPlayer = (e) => {
     e.preventDefault();
     setCurrentPlayer(
       currentPlayer + 1 < players.length ? currentPlayer + 1 : 0
+    );
+  };
+
+  const pickStrat = (stratNumber) => {
+    setGameState(
+      gameState.map((strat) =>
+        strat.number === stratNumber
+          ? { ...strat, player: players[currentPlayer] }
+          : strat
+      )
     );
   };
 
@@ -21,7 +31,7 @@ export default function StrategyPhasePage({
       </div>
       <button onClick={nextPlayer}>Next Player</button>
       <div>
-        <ul>{gameState.map(renderStrategy)}</ul>
+        <RenderStrategy gameState={gameState} handleClick={pickStrat} />
       </div>
     </>
   );
