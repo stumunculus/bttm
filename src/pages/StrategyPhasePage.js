@@ -28,10 +28,14 @@ export default function StrategyPhasePage({
     <>
       <div>
         <h1>Current Player: {players[currentPlayer]}</h1>
+        <button onClick={nextPlayer}>Next Player</button>
       </div>
-      <button onClick={nextPlayer}>Next Player</button>
       <div>
-        <RenderStrategy gameState={gameState} handleClick={pickStrat} />
+        <RenderStrategy
+          gameState={gameState}
+          handleClick={pickStrat}
+          buttonName={"Select Strategy"}
+        />
       </div>
     </>
   );

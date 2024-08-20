@@ -47,10 +47,10 @@ export const APP_MODES = {
 };
 
 export const gamePhases = {
-  strategy: "strategy",
-  action: "action",
-  status: "status",
-  agenda: "agenda",
+  strategy: "Strategy",
+  action: "Action",
+  status: "Status",
+  agenda: "Agenda",
 };
 
 export const MIN_PLAYERS = 3;
